@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bonus</title>
+</head>
+<body>
+    <script>
+        var a = parseInt(prompt("Enter a"))
+        var b = parseInt(prompt("Enter b"))
+        var c = parseInt(prompt("Enter c"))
+        var d = parseInt(prompt("Enter d"))
+
+        function sum(a,b){
+            return a+b
+        }
+
+        function minus(a,b){
+            return a-b
+        }
+
+        function mul(a,b){
+            return a*b
+        }
+
+        if(sum(mul(b,c),a)==d || mul(sum(b,c),a)==d || minus(sum(b,c),a)==d || sum(minus(b,c),a)==d || mul(minus(b,c),a)==d || minus(mul(b,c),a)==d){
+            document.writeln("Yes")
+        }else{
+            document.writeln("No")
+        }
+    </script>
+</body>
+</html>
