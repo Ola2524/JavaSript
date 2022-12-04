@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q3</title>
+</head>
+<body>
+    <a href="#" onclick="open_window()">Open window</a>
+    <a href="#" onclick="close_window()">Close window</a>
+    <script>
+        var win
+        var i=0
+        var loop
+        var arr="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos minus unde dicta voluptas assumenda beatae. Minima hic numquam ex incidunt tenetur id facere animi accusamus deleniti maxime, dolor officiis doloribus?";
+        function open_window(){
+            setTimeout(function(){
+                win = window.open('','','_blank')
+                win.document.write("<p id='para'></p>")
+                loop = setInterval(paragraph(),1000)
+            },3000)
+        }
+
+        function paragraph(){
+            win.document.getElementById("para").innerText += arr[i];
+            i++
+
+            if (i>=arr.length) {
+                win.clearInterval(loop)
+            }
+        }
+
+        function close_window(){
+            win.close()
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q2</title>
+</head>
+<body>
+    <button id="clock">Clock</button>
+    <h1 id="c"></h1>
+    <script>
+        document.getElementById("clock").addEventListener("click",start_clock)
+        function start_clock(){
+            alert("Clock Started");           
+            setInterval(time,1000);
+        }
+
+        function time(){
+            var time=new Date();
+            var clocks=document.getElementById("c");
+            clocks.innerText=time.toLocaleTimeString();
+        }
+    </script>
+</body>
+</html>
