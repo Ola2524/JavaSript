@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q1</title>
+    <style>
+        .error{
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" novalidate>
+        <pre>
+        Fullname        <input type="text" name="name" id="fullname" placeholder="Enter your Name:" required onfocus="nameFocus()" onblur="nameBlur()"><span class="error"> Invalid name</span><br><br>
+        Email           <input type="text" name="email" placeholder="Enter email" required><br><br>
+        City            <select name="city" id="" required>
+            <option value="aswan">Aswan</option>
+            <option value="qena">Qena</option>
+            <option value="luxor">Luxor</option>
+            <option value="alex">Alex</option>
+            <option value="menia">Menia</option>
+        </select><br><br>
+        Password        <input type="password" name="password" id="password" placeholder="Enter password" required><br><br>
+        Repeat password <input type="password" name="repassword" id="repassword" onblur="repasswordBlur()" placeholder="Repeat password" required><span class="error"> Password and repeat password should be the same</span><br><br>
+        <input type="checkbox" name="accept" id="terms" required> <label for="terms">I accept the terms and conditions</label><br><br><br>
+        <input type="submit" value="Register" onclick="register()">
+    
+    </form>
+
+    <br>
+        <span id="thanks"></span>
+    </pre>
+    <script src="q1.js"></script>
+</body>
+</html>

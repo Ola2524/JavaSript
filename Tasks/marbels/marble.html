@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marble</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            margin-top: 300px;
+        }
+
+        body img{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="./marble2.jpg" alt="">
+    <img src="./marble3.jpg" alt="">
+    <img src="./marble1.jpg" alt="">
+    <img src="./marble1.jpg" alt="">
+    <img src="./marble1.jpg" alt="">
+
+    <script>
+        var i = 2
+        var j = 1
+        var k = 0
+        var images = document.getElementsByTagName("img")
+        setInterval(function(){
+
+            images[i].src = "marble3.jpg";
+            images[j].src = "marble2.jpg";
+            images[k].src = "marble1.jpg";
+
+            k=j
+            j=i
+            i++
+            // k=i
+            if (i > images.length-1) {
+                i=0
+            }
+        },1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q2</title>
+</head>
+<body id="body">
+    <script>
+        var image = document.createElement("img")
+        image.src = "marble3.jpg"
+
+        var div = document.createElement("div")
+        div.appendChild(image)
+        div.insertBefore(image,div.children[0])
+        document.getElementById('body').appendChild(div);
+
+        alert(div.childNodes.length)
+
+        div.removeChild(image)
+    </script>
+</body>
+</html>

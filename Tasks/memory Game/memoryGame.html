@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 5%;
+        }
+
+        body img{
+            width: 170px;
+        }
+    </style>
+</head>
+<body id="body">
+    <button value="0" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="1" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="2" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="3" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="4" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="5" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="6" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="7" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="8" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="9" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="10" onclick="show(this.value)"><img src="./Moon.gif"></button>
+    <button value="11" onclick="show(this.value)"><img src="./Moon.gif"></button>
+
+    <script>
+        var i = 0 
+        var arr = [0,10]
+        var arr2 = []
+        var check = []
+        var images = document.getElementsByTagName("img")
+
+        setInterval(function(){
+            rand = Math.floor(Math.random()*12)
+        },500)
+
+        while(arr.length != 12){
+            rand = Math.floor(Math.random()*12)
+            if (arr.indexOf(rand) == -1) {
+                arr[i] = rand
+                i++
+            }          
+        }
+
+    for(i = 0; i<arr.length; i++){
+        switch(arr[i]){
+            case 6:
+                arr[i] = 0
+                break
+            case 7:
+                arr[i] = 1
+                break
+            case 8:
+                arr[i] = 2
+                break
+            case 9:
+                arr[i] = 3
+                break
+            case 10:
+                arr[i] = 4
+                break
+            case 11:
+                arr[i] = 5
+                break
+        }
+    }
+
+        function show(value){
+            
+            images[value].src = arr[value]+".gif"
+
+            check.push(arr[value])
+            arr2.push(value)
+            // console.log(check[0])
+            // console.log(check[1])
+            if (arr2.length == 2) {
+            setTimeout(function(){
+                if (check[1] != check[0]) {
+                    images[arr2[0]].src="moon.gif"                   
+                    images[arr2[1]].src="moon.gif"                   
+                    arr2 = []
+                    check = []
+                }else{
+                    arr2 = []
+                    check = []
+                }     
+            },1000)
+        }
+        }
+
+    </script>
+</body>
+</html>
