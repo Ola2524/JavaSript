@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form q1</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <h1>Login Form</h1>
+        <label>Email</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="email" name="email" placeholder="Enter your email" id="email"><br><br>
+        <label>Password</label>&nbsp;
+        <input type="password" id="pass" placeholder="Enter your password"><br><br>
+        <input type="submit" value="Login" onclick="LocalStorage()">
+
+    </form>
+    <script>
+        function LocalStorage(){
+            var email = document.getElementById("email").value
+            var password = document.getElementById("pass").value
+
+            var email_localStorage = window.localStorage.getItem('Email')
+            var password_localStorage = window.localStorage.getItem('Password')
+
+            if (email != email_localStorage){
+                alert("Wrong Email")
+            }else if (password != password_localStorage){
+                alert("Wrong Password")
+            }else{
+                alert("Logged in successfully")
+            }
+
+            const d = new Date();
+            d.setTime(d.getTime() - (24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = "Email=;Password=;" + expires;
+
+        }
+    </script>
+</body>
+</html>

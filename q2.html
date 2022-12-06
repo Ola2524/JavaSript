@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q2</title>
+</head>
+<body>
+    <div id="req"></div>
+    <script>
+        var todos=new XMLHttpRequest();
+        todos.open('GET','https://dummyjson.com/todos');// estplish connection 0
+        todos.send();
+        var todo;
+        todos.onreadystatechange=function() // calll over make change in state of request
+        {
+            if(todos.readyState == 4){
+                if(todos.status == 200){
+                    todo = JSON.parse(todos.responseText).todos;
+                    req = document.getElementById("req")
+                    for(var i=0; i < todo.length ;i++){
+                    req.innerText = req.innerText + (todo[i].id +" "+ todo[i].completed + "\n");
+                    } 
+                }
+            }
+        }
+    </script>
+</body>
+</html>
