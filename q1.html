@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q1</title>
+</head>
+<body>
+    <script>
+        function box(_width,_height,_books){
+            this.width = _width
+            this.height = _height
+            this.books = _books
+        }
+
+        function book(_id,_name,_writer_name,_num_of_pages){
+            this.id = _id
+            this.name = _name
+            this.writer_name = _writer_name
+            this.num_of_pages = _num_of_pages
+        }
+
+        box.prototype.valueOf=function(books)
+        {
+            var pages_sum = 0
+
+            for(var i = 0; i < books.length; i++){
+                pages_sum += box1.books[i].num_of_pages
+            }
+
+            return pages_sum
+        }
+
+        var book1 = new book(1,"OOP","david",100)
+        var book2 = new book(2,"JS","david",200)
+        var book3 = new book(3,"Database","david",300)
+
+        var books = [book1,book2,book3]
+        var box1 = new box(200,200,books)
+
+        
+
+        var area = box1.width * box1.height
+
+        document.write("Number of pages: ")
+        document.write(box1.valueOf(books))
+        document.write("<br><br>")
+        document.write("Area of box: ")
+        document.write(area)
+
+
+    </script>
+</body>
+</html>

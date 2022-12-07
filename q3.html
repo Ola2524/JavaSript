@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q3</title>
+</head>
+<body>
+    <script>
+        function Course(_id,_name){
+            this.id = _id
+            this.name = _name
+            this.grade = 0
+        }
+
+        function Student(_id,_name,_courses){
+            this.id = _id
+            this.name = _name
+            this.courses = _courses
+        }
+
+        var c1 = new Course(1,"OOP")
+        var c2 = new Course(2,"JS")
+
+        s1Courses = [c1,c2]
+        var s1 = new Student(1,"S1",s1Courses)
+
+        Student.prototype.display=function()
+        {
+            document.write(this.name)
+            document.write(" Courses:<br><br>")
+            for(var i=0; i < this.courses.length; i++){
+                document.write(this.courses[i].name)
+                document.write(" ")
+                document.write(this.courses[i].grade)
+                document.write("<br>")
+            }
+        }
+
+        Student.prototype.grades=function()
+        {
+            for(var i=0; i < this.courses.length; i++){
+                var c = parseInt(prompt("Enter grade of course: "+this.courses[i].name))
+                this.courses[i].grade = c
+            }
+        }
+
+        Student.prototype.Totalgrade=function()
+        {
+            var sum = 0
+            for(var i=0; i < this.courses.length; i++){
+                sum += this.courses[i].grade
+            }
+            return sum
+        }
+
+        s1.grades()
+        s1.display()
+        document.write("Total Grade: ")
+        document.write(s1.Totalgrade())
+
+    </script>
+</body>
+</html>

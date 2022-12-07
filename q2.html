@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q2</title>
+</head>
+<body>
+    <script>
+        function Point3D(x = 0,y = 0,z = 0){
+            this.x = x
+            this.y = y
+            this.z = z
+        }
+
+        Point3D.prototype.print3DPoint=function()
+        {
+            console.log("3DPoint: X="+this.x+", Y="+this.y+", Z="+this.z);
+        }
+
+        Point3D.prototype.calculateDistance=function(P2)
+        {
+            d = Math.sqrt((P2.x-this.x)^2+(P2.y-this.y)^2+(P2.z-this.z)^2)
+            return d
+        }
+
+        p1 = new Point3D()
+        p2 = new Point3D(1,2,3)
+        p1.print3DPoint()
+
+        document.write(p1.calculateDistance(p2))
+    </script>
+</body>
+</html>
