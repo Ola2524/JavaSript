@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q3</title>
+</head>
+<body>
+    <script>
+
+        var Address = {
+            city: "Aswan",
+            street: "123abc",
+            zip_code: "555"
+        }
+        var ScientificDepartment = {
+            location: "Aswan",
+            Address,
+            display() {
+                document.write("Location: ")
+                document.write(ScientificDepartment.location)
+                document.write("<br>Address: ")
+                document.write(Address.street)
+                document.write(" ")
+                document.write(Address.city)
+                document.write(" ")
+                document.write(Address.zip_code)
+            }
+        }
+
+        ScientificDepartment.display()
+    </script>
+</body>
+</html>

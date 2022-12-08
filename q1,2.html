@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q1</title>
+</head>
+<body>
+    <script>
+        class Person{
+            #id
+            #name
+            #phone
+
+            constructor(_id,_name,_phone_number){
+                if(this.constructor == Person){
+                    throw("Person is an abstraction class")
+                }
+
+                this.#id = _id
+                this.#name = _name
+                this.#phone = _phone_number
+            }
+
+            display(){
+                document.write("id = ")
+                document.write(this.#id)
+                document.write(", name = ")
+                document.write(this.#name)
+                document.write("Phone Number = ")
+                document.write(this.#phone)
+            }
+
+            setID(id){
+                this.#id = id
+            }
+
+            setName(name){
+                this.#name = name
+            }
+
+            setPhone(phone){
+                this.#phone = phone
+            }
+
+            getID(){
+                return this.#id
+            }
+
+            getName(){
+                return this.#name
+            }
+
+            getPhone(){
+                return this.#phone
+            }
+        }
+
+        class Employee extends Person{
+            static count = 0
+            constructor(id,name,phone_number,salary){
+                super(id,name,phone_number)
+                this.salary = salary
+                Employee.count++
+            }
+
+            static displayHTRules(){
+                document.write("HR RULES<br>")
+                document.write("1. suafufbcudsbuablcfhaisuhifauh<br>")
+                document.write("2. afdsbhygfiabfjbycgdsyujdsbhvebvhdsgvuiehjvei<br>")
+                document.write("3. chdasbvduivusidaivbdsvygasbdhsdsbsdhbvhjdsbyvsduyve<br>")
+            }
+
+            showSalary(){
+                document.write("<br>Salary: ")
+                document.write(this.salary)
+            }
+
+            increaseSalalry(){
+                return this.salary+1000
+            }
+        }
+
+        class Student extends Person{
+            constructor(id,name,phone_number,grade){
+                super(id,name,phone_number)
+                this.grade = grade
+            }
+        }
+
+        Employee.displayHTRules()
+        var e1 = new Employee(1,"e1","012321321",2000)
+        document.write("<br>Employee count: ")
+        document.write(Employee.count)
+    </script>
+</body>
+</html>

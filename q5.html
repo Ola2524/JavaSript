@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q5</title>
+</head>
+<body>
+    <script>
+        var fruits = ["apple", "strawberry", "banana", "orange", "mango"] 
+        var isStr = 0 
+
+        for(var i = 0; i < fruits.length; i++){
+            if (typeof fruits[i]=="string") {
+                isStr = 1
+            }
+        }
+
+        if (isStr == 1) {
+            for(var i = 0; i < fruits.length; i++){
+                if (fruits[i].match(/^a/)) {
+                    console.log("some of array elements starts with 'a'");
+                }
+            }
+        }
+
+        var bs = fruits.filter(function(arr){
+            return arr.match(/^b/) || arr.match(/^s/)
+        })
+
+        console.log(bs);
+
+
+        console.log("Previous array")
+        fruits.forEach(element => {
+            console.log(element);
+        });
+
+        console.log("new array");
+        bs.forEach(element => {
+            console.log(element);
+        });
+
+    </script>
+</body>
+</html>

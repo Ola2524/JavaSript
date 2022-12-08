@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q6</title>
+</head>
+<body>
+    <script>
+        var countries = ["Egypt","USA","Libia","Canada","USA","Egypt"]
+        var dub = new Set([])
+
+        for(var i = 0; i < countries.length; i++){
+            dub.add(countries[i])
+        }
+
+        var c = countries.length
+        var d = dub.size
+
+        console.log("The numbers of repeated items: "+ (c-d));
+    </script>
+</body>
+</html>
